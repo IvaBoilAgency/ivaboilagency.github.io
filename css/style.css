@@ -111,11 +111,10 @@ body{font-size:1.8rem; line-height:2.3rem; color:#000; background:#FBF6E1; font-
 .more-info-link a {display: inline-block; text-decoration: underline; font-size: 2.4rem; color: #000; font-weight: bold; line-height: 3.2rem;}
 
 
-
-
 #header {margin-bottom: 40px; z-index: 5000; transition: all 0.3s linear; position: fixed; width: 100%; top:0; left: 0; right: 0; transition: top 0.3s linear; }
 #header .inner-wrapper {display: flex; align-items: center; }
 #header .logo-element {background-image: url("images/el-citadel-logo.svg"); height: 170px;width: 235px; background-repeat: no-repeat; margin: 15px 0;}
+.logo-element a {display: block; height: 170px;}
 #header .main-nav {margin-left: auto;}
 #header .main-nav ul li {display: inline-block;}
 #header .main-nav ul li a {display: block; font-family: "Druk-CondSuper", sans-serif; color: #000; font-size: 3.5rem; text-transform: uppercase; padding: 4px; margin: 0 2px;}
@@ -143,7 +142,6 @@ body{font-size:1.8rem; line-height:2.3rem; color:#000; background:#FBF6E1; font-
 #introduction-section .row1 .inner-wrapper .image-shell .image-position {position: relative; height: 100%;}
 #introduction-section .inner-wrapper .image-shell img {display: block; width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: -50px; bottom: -50px; margin: auto; object-fit: cover;}
 #introduction-section .row1 .inner-wrapper .text-shell:before {content: ""; position: absolute; right: 0; top:0; width: 80px; height: 100%; display: block; z-index: 200; background: #FBCC56;}
-
 
 #introduction-section .row2 .inner-wrapper .image-shell {width: 78%; margin-right: 15px; }
 #introduction-section .row2 .inner-wrapper .image-shell .image-position {position: relative; height: 100%;}
@@ -209,14 +207,11 @@ body{font-size:1.8rem; line-height:2.3rem; color:#000; background:#FBF6E1; font-
 #footer .copyright-line {background: #000; color:#fff; }
 #footer .copyright-line span {display: block; font-size: 1.4rem; line-height: 2.5rem; padding: 10px 0;}
 
-#header .menu-wrap .logo-element {background-image: url("images/el-citadel-star-white.svg"); z-index: 8000; height: 65px; width: 65px; background-repeat: no-repeat; margin: 15px 20px; position: absolute;}
+#header .menu-wrap .logo-element {background-image: url("images/el-citadel-star-white.svg"); z-index: 8000; height: 65px; width: 65px; background-repeat: no-repeat; margin: 5px 20px; position: absolute;}
 
 .menu-wrap {position: fixed; top: 10px; left: 0; z-index: 1; width: 100%; display: none;  transition: top 0.3s linear;}
 .menu-wrap .toggler{position: absolute; top: 0; right: 0; z-index: 2; cursor: pointer; width: 50px; height: 50px; opacity: 0;}
-.menu-wrap .hamburger{position: absolute; top: 0; right: 0; z-index: 1; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #000; padding: 10px ;}
-
-#header.state-up .menu-wrap {top: -200px; }
-#header .menu-wrap {top: 10px;}
+.menu-wrap .hamburger{position: absolute; top: 0; right: 0; z-index: 1; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #000; padding: 10px; transition: top 0.3s linear; }
 
 
 /* Hamburger line */
@@ -246,15 +241,23 @@ body{font-size:1.8rem; line-height:2.3rem; color:#000; background:#FBF6E1; font-
 .menu-wrap .menu > div > div > ul > li {list-style: none; color: #fff; font-size: 1.5rem; padding: 1rem;}
 .menu-wrap .menu >div > div > ul > li > a{color: inherit; text-decoration: none; transition: color 0.4s ease;}
 
+#header.state-up .hamburger {top: -200px; }
+#header .hamburger {top: 0px;}
+#header.state-up .menu-wrap .toggler:checked ~ .hamburger {top: 0;}
+
 
 /* PRIZJEN */
 .fixed-devider {padding-bottom: 120px;}
 
-.about-intro {padding-bottom: 120px;}
+.about-intro {padding-bottom: 120px; overflow: hidden;}
 .about-intro .head-image {position: relative;}
 .about-intro .head-image .image-position {height: 460px; overflow: hidden; position: relative;}
 .about-intro .head-image img {display: block; width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: -50px; bottom: -50px; margin: auto; object-fit: cover;}
+
 .about-intro .head-image:after {position: absolute; content: ""; left: -101%; top: 0; height: 100%; width: 100%; display: block; background: #FBCC56;}
+.about-intro .head-image.rightafter:after {position: absolute; content: ""; right: -101%!important; top: 0; height: 100%; width: 100%; display: block; background: #FBCC56; left:auto;}
+
+
 .available-hours-section .inner-wrapper {flex-flow: row wrap;}
 .available-hours-section .single-row {margin-bottom: 50px;}
 .available-hours-section .inner-wrapper .cell {width: 45%;}
@@ -284,10 +287,91 @@ table.table-shell td, table.table-shell th {border-width: 0px; border-color: #ff
 .citadel-member-section .member-illustration {width: 45%; margin-left: 5%;}
 .citadel-member-section .member-illustration img {display: block;}
 
+/* ONZE VISIE */
+.full-sided-section {padding-left:12%;}
+.full-sided-section .section-row {margin-bottom: 15px;}
+.full-sided-section .inner-wrapper {}
+.full-sided-section .text-content {width: 60%; background: #05512a; padding: 5%; box-sizing: border-box;}
+.full-sided-section .text-content .main-heading h2 {text-align: left; color: #fff;}
+.full-sided-section .text-content .main-heading p {text-align: left; color: #fff;}
+.full-sided-section .section-row:first-child .image-content {margin-left: 15px; }
+.full-sided-section .section-row:last-child .image-content {margin-right: 15px; }
+.full-sided-section .image-content {position: relative; width: 40%;}
 
+.full-sided-section .image-content img {display: block; width: 100%; height: 100%; margin: auto; object-fit: cover;}
+.simple-section .full-width-illustration {width: 100%; height: 60vh; position: relative;}
+.simple-section .full-width-illustration img {display: block; width: 100%; height: 100%; margin: auto; object-fit: cover; position: absolute; top:-50%; bottom: -50%; left:0; right:0;}
 
+.citadel-team .team-shell ul {display: flex; flex-flow: row wrap; justify-content: center;}
+.citadel-team .team-shell ul li {width: 19%; margin: 3%; text-align: center;}
+.citadel-team .team-shell ul li .profile-image {margin-bottom: 20px; height: 250px; overflow: hidden; position: relative;}
+.citadel-team .team-shell ul li .profile-image img {display: block; width: 100%; height: 100%; margin: auto; object-fit: cover; position: absolute; top:-50%; bottom: -50%; left:0; right:0;}
+.citadel-team .team-shell ul li .name {font-weight: bold; font-size: 2rem; line-height: 2.4rem;}
+.citadel-team .team-shell ul li .position {font-size: 1.6rem;}
 
+/* EARLY-BIRDS */
+.manuel-geeft {margin-bottom: 240px;}
+.manuel-geeft .manuel-illustration {margin-top: 180px; margin-bottom: 250px;}
+.manuel-geeft .elements-shell {background: #05512a;}
+.manuel-geeft .inner-wrapper {align-items: center;}
+.manuel-geeft .inner-wrapper .image-position {width: 40%; margin: -150px 0;}
+.manuel-geeft .inner-wrapper .image-position img {display: block;}
+.manuel-geeft .inner-wrapper .manul-quote {width: 60%;}
+.manuel-geeft .inner-wrapper .manul-quote span {display: inline-block; display: inline-block; font-size: 6rem; font-weight: 600; text-transform: uppercase; line-height: 7rem; text-align: center; font-style: italic; color: #fbf6e1;}
 
+.event-description {text-align: center;}
+.event-description h3 {padding-bottom: 25px; font-size: 4rem; line-height: 4.5rem;}
+.event-description .opening-announcement h4 {font-size: 5rem; line-height: 6.4rem; color: #05512a; border: 10px solid #05512a; padding: 50px;}
+
+.early-bird .single-step-icon {margin-bottom: 60px;}
+.early-bird .icon-text {font-size: 3rem; font-weight: 600; line-height: 3.5rem; padding-bottom: 20px;}
+
+input[type=radio] {visibility: hidden;}
+
+.form-shell {max-width: 1920px; margin: 0 auto;}
+.form-shell .padel-status h3 {font-size: 3rem; line-height: 3.8rem; margin-bottom: 30px;}
+
+.form-shell .inner-wrapper {flex-flow: row wrap;}
+.form-shell .radio-svg {width: 32%; text-align: center; margin: 0 auto;}
+.form-shell .radio-svg:nth-child(2) {margin: 0 2%;}
+.radio-svg {position: relative;}
+label {clear: both; display: block; text-align: center; cursor: pointer; }
+
+.radio-svg input[type=radio] {position: absolute; width: 100%; height: 100%; top: 0; left: 0; right:0; display: block;} 
+.radio-svg label {border: 6px solid #000; position: relative; padding-top: 180px; padding-bottom: 20px; font-size: 2.5rem; line-height: 3rem; font-weight: 600;}
+
+.radio-svg span {font-size: 2rem!important; color: #000; position: absolute;bottom: 0;left: 0; right: 0;}
+.radio-svg label:before {content: ''; margin-right:5px; display: block; height: 130px; width: 130px; background-repeat: no-repeat; top:15px; left:0; right:0; margin: 0 auto; position: absolute; }
+.radio-svg.newby label:before {background-image: url("images/hat-icon-black.png");}
+.radio-svg.medium label:before {background-image: url("images/barometer-icon-black.png");}
+.radio-svg.lover label:before {background-image: url("images/crown-icon_black.png");}
+.radio-svg input[type=radio]:checked ~ label {background-color: #F6A579; border: 6px solid #F6A579; color: #fff!important;}
+.radio-svg.newby input[type=radio]:checked ~ label:before {background-image: url("images/hat-icon-white.png");}
+.radio-svg.medium input[type=radio]:checked ~ label:before {background-image: url("images/barometer-icon_white.png");}
+.radio-svg.lover input[type=radio]:checked ~ label:before {background-image: url("images/crown-icon-white.png");}
+  
+
+ /* --- CONTACTS --- */
+.contacts-info .contacts-shell ul {display: flex; flex-flow: row wrap;}
+.contacts-info .contacts-shell ul li {width: 33%; text-align: center;}
+.contacts-info .contacts-shell ul li i {font-size: 7rem; padding-bottom: 20px;}
+.contacts-info .contacts-shell ul li a {display: block; color: #000; font-size: 2.2rem; font-weight: 600;}
+.contacts-info .contacts-shell ul li p {color: #000; font-size: 2.2rem; font-weight: 600; line-height: 2.5rem;}
+
+.full-width-map {overflow: hidden;}
+.full-width-map .map-wrap {height: 460px; position: relative;}
+.full-width-map .map-wrap iframe {height: 100%;}
+.full-width-map .map-wrap:after {position: absolute; content: ""; right: -101%!important; top: 0; height: 100%; width: 100%; display: block; background: #FBCC56; left:auto;}
+
+.row-form {margin-bottom: 30px;}
+.register-early-bird-form .row-form {margin-bottom: 50px!important}
+
+.row-form input, select {width: 100%; box-sizing: border-box; background: transparent; border-bottom: 5px solid #000; line-height: 5rem; height: auto!important; font-weight: bold; font-size: 2rem; outline: none; color: #000!important;}
+.row-form select {padding: 15px 0;}
+.row-form option {height: auto; line-height: 5rem;}
+.submit-button  {text-align: center;}
+.submit-button input {background: #05512A; border-radius: 0; font-size: 2.2rem; font-weight:  600; padding: 15px 40px;}
+.form-shell .padel-status-row {margin-bottom: 80px!important;}
 
 
 /* --- END CONTENT --- */
@@ -309,22 +393,19 @@ table.table-shell td, table.table-shell th {border-width: 0px; border-color: #ff
 
 @media screen and (max-width: 1440px){@viewport{width:1440px;}@-o-viewport{width:1440px;}@-ms-viewport{width:device-width;}
 
-.outer-wrapper {padding-left: 5%; padding-right: 5%;}
-#introduction-section .row1 .inner-wrapper .text-shell {padding-left: 5%;}
-#introduction-section .row2 .inner-wrapper .text-shell .one-line-link {padding-right: 5%;}
-#introduction-section .row1 .inner-wrapper .text-shell span.welcome {font-size: 14.25rem; line-height: 14rem;}
-#introduction-section .row1 .inner-wrapper .text-shell h1 {font-size: 7rem;line-height: 5rem;}
-#introduction-section .row1 .inner-wrapper .text-shell span.opening {font-size: 7rem; line-height: 6rem;}
-#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {font-size: 6rem; line-height: 5.7rem;}
-.padel-centrum .padel-field {width: 40%;}
-.padel-centrum .padel-field-additional {width: 60%;}
-.playtomic-book .playtomic-logo img {max-width: 250px;}
-.large-qoute h3 {font-size: 7rem; line-height: 6.75rem}
+	.outer-wrapper {padding-left: 5%; padding-right: 5%;}
+	#introduction-section .row1 .inner-wrapper .text-shell {padding-left: 5%;}
+	#introduction-section .row2 .inner-wrapper .text-shell .one-line-link {padding-right: 5%;}
+	#introduction-section .row1 .inner-wrapper .text-shell span.welcome {font-size: 14.25rem; line-height: 14rem;}
+	#introduction-section .row1 .inner-wrapper .text-shell h1 {font-size: 7rem;line-height: 5rem;}
+	#introduction-section .row1 .inner-wrapper .text-shell span.opening {font-size: 7rem; line-height: 6rem;}
+	#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {font-size: 6rem; line-height: 5.7rem;}
+	.padel-centrum .padel-field {width: 40%;}
+	.padel-centrum .padel-field-additional {width: 60%;}
+	.playtomic-book .playtomic-logo img {max-width: 250px;}
+	.large-qoute h3 {font-size: 7rem; line-height: 6.75rem}
 
-
-
-
-
+	.form-shell {width: 80%;}
 
 
 
@@ -344,31 +425,38 @@ table.table-shell td, table.table-shell th {border-width: 0px; border-color: #ff
 
 @media screen and (max-width: 1120px){@viewport{width:1120px;}@-o-viewport{width:1120px;}@-ms-viewport{width:device-width;}
 
-
+	.citadel-team .team-shell ul li {width: 27%;}
+	.manuel-geeft .inner-wrapper .manul-quote span {font-size: 5rem; line-height: 6rem;}
 
 }
 
 @media screen and (max-width: 1024px){@viewport{width:1024px;}@-o-viewport{width:1024px;}@-ms-viewport{width:device-width;}
-.wrapper {max-width: 1024px;}
+	.wrapper {max-width: 1024px;}
 
 
-.outer-wrapper {padding: 0 20px 0 20px}
-.menu-wrap{display: block; height: 100vh;}
-.main-nav {display: none;}
-#header .logo-element {height: 65px; width: 65px;}
-#introduction-section,
-.inner-page-spacing {margin-top: 120px;}
-#header .logo-element {background-image: url("images/el-citadel-star-black.svg"); }
+	.outer-wrapper {padding: 0 20px 0 20px}
+	.menu-wrap{display: block; }
+	.main-nav {display: none;}
+	.logo-element a {height: 65px;}
+	#header .logo-element {height: 65px; width: 65px;}
+	#introduction-section,
+	.inner-page-spacing {margin-top: 120px;}
+	#header .logo-element {background-image: url("images/el-citadel-star-black.svg"); }
 
-#introduction-section .row1 .inner-wrapper .text-shell {padding-left: 20px;}
-#introduction-section .inner-wrapper {display: flex; flex-flow: wrap row;}
-#introduction-section .row1 .inner-wrapper .text-shell {width: 100%; margin-bottom: 15px;}
-#introduction-section .row1 .inner-wrapper .image-shell {width: 100%; height: 300px; padding-left: 20px; margin-left: 0;}
-#introduction-section .row2 .inner-wrapper .image-shell {width: 100%; margin-right: 0; padding-right: 20px; height: 300px; margin-bottom: 15px;}
-#introduction-section .row2 .inner-wrapper .text-shell {width: 100%;}
-.padel-centrum .padel-field {display: none;}
-.padel-centrum .padel-field-additional {width: 100%; margin-left: 0; padding-left: 0;}
+	#introduction-section .row1 .inner-wrapper .text-shell {padding-left: 20px;}
+	#introduction-section .inner-wrapper {display: flex; flex-flow: wrap row;}
+	#introduction-section .row1 .inner-wrapper .text-shell {width: 100%; margin-bottom: 15px;}
+	#introduction-section .row1 .inner-wrapper .image-shell {width: 100%; height: 300px; padding-left: 20px; margin-left: 0;}
+	#introduction-section .row2 .inner-wrapper .image-shell {width: 100%; margin-right: 0; padding-right: 20px; height: 300px; margin-bottom: 15px;}
+	#introduction-section .row2 .inner-wrapper .text-shell {width: 100%;}
+	.padel-centrum .padel-field {display: none;}
+	.padel-centrum .padel-field-additional {width: 100%; margin-left: 0; padding-left: 0;}
+	.manuel-geeft .inner-wrapper .manul-quote span {font-size: 4rem;line-height: 5rem;}
+	.contact-form .contact-contaier {max-width:100%;}
+	.contacts-info .contacts-shell ul li {width: 100%; margin-bottom: 50px;} 
 
+	.event-description .opening-announcement h4 {font-size: 4rem; line-height: 5.4rem;}
+	.form-shell {width: 100%;}
 
 
 }
@@ -384,36 +472,45 @@ table.table-shell td, table.table-shell th {border-width: 0px; border-color: #ff
 	.citadel-member-section .head-text {width: 100%; text-align: center; margin-right: 0; margin-bottom: 40px;}
 	.citadel-member-section .head-text h2 {text-align: center;}
 	.citadel-member-section .member-illustration {margin-left: 0; margin: 0 auto;}
-
-
-
+	.full-sided-section {padding-left: 20px;}
+	.citadel-team .team-shell ul li {width: 44%;}
+	.manuel-geeft .inner-wrapper .image-position {margin: -120px 0;}
+	.manuel-geeft .manuel-illustration {margin-top: 130px; margin-bottom: 180px;}
 
 }
 
 @media screen and (max-width: 830px){@viewport{width:830px;}@-o-viewport{width:830px;}@-ms-viewport{width:device-width;}
 
-html{font-size:55%;}
+	html{font-size:55%;}
 
-.about-project .text-shell {width: 100%; padding: 0; margin: 0 0 40px 0;}
-.about-project .image-shell {width: 100%; margin: 0; padding: 0;}
-.about-project .inner-wrapper {padding: 40px 0;}
-.early-bird .steps .indicator {font-size: 4.5rem; line-height: 3rem;}
-.main-heading {margin-bottom: 20px;}
-.booking-at-citadel {padding-bottom: 80px;}
-.large-qoute {padding-top: 70px;}
-.available-hours-section .inner-wrapper .cell .cell-head {text-align: center;}
-.available-hours-section .inner-wrapper .cell {width: 100%; text-align: center;}
-.available-hours-section .inner-wrapper .cell.left {margin-right: 0;}
-.available-hours-section .inner-wrapper .cell.right {margin-left: 0;}
+	.about-project .text-shell {width: 100%; padding: 0; margin: 0 0 40px 0;}
+	.about-project .image-shell {width: 100%; margin: 0; padding: 0;}
+	.about-project .inner-wrapper {padding: 40px 0;}
+	.early-bird .steps .indicator {font-size: 4.5rem; line-height: 3rem;}
+	.main-heading {margin-bottom: 20px;}
+	.booking-at-citadel {padding-bottom: 80px;}
+	.large-qoute {padding-top: 70px;}
+	.available-hours-section .inner-wrapper .cell .cell-head {text-align: center;}
+	.available-hours-section .inner-wrapper .cell {width: 100%; text-align: center;}
+	.available-hours-section .inner-wrapper .cell.left {margin-right: 0;}
+	.available-hours-section .inner-wrapper .cell.right {margin-left: 0;}
 
-
+	.manuel-geeft .inner-wrapper .image-position {width: 60%; margin: -80px 0;}
+	.manuel-geeft .inner-wrapper .manul-quote {width: auto;}
+	.event-description .opening-announcement h4 {font-size: 3.4rem;line-height: 4.6rem;}
 
 
 }
 
 @media screen and (max-width: 800px){@viewport{width:800px;}@-o-viewport{width:800px;}@-ms-viewport{width:device-width;}
 
-.citadel-table .table-cell, .citadel-table .table-head {padding: 10px;}
+	.citadel-table .table-cell, .citadel-table .table-head {padding: 10px;}
+	.full-sided-section .inner-wrapper {flex-flow: row wrap;}
+	.full-sided-section .text-content {margin-bottom: 15px; width: 100%; padding:40px;}
+	.full-sided-section .section-row:first-child .image-content {margin-left: 0; width: 100%}
+	.full-sided-section .section-row:last-child .image-content {margin-right: 0; width: 100%; margin-bottom: 15px;}
+	.manuel-geeft .inner-wrapper .manul-quote span {font-size: 3.4rem; line-height: 4.3rem;}
+
 
 }
 
@@ -422,28 +519,35 @@ html{font-size:55%;}
 
 @media screen and (max-width: 640px){@viewport{width:640px;}@-o-viewport{width:640px;}@-ms-viewport{width:device-width;}
 
-#footer .menu-column {width: 100%; margin-bottom: 40px;}
-#footer .menu-column:last-child {margin-bottom: 0;}
-#footer .copyright-line {text-align: center;}
-#introduction-section .row1 .inner-wrapper .text-shell::before {width: 50px;}
-#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {margin-bottom: 25px;}
-#introduction-section .row2 .inner-wrapper .text-shell .one-line-link a::after {left: -130px; top: 25px;}
-#introduction-section .row2 .inner-wrapper .text-shell .one-line-link a {font-size: 6rem; line-height: 6rem;}
-.main-heading h2,
-.main-heading h1 {font-size: 6rem; line-height: 5.7rem;}
-#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {padding: 20px;}
-.padel-centrum .padel-field-additional .text-shell {padding: 30px;}
-.large-qoute h3 {font-size: 5rem; line-height: 4.75rem;}
-.large-qoute::before {height: 10px;}
-.early-bird .padel-illustration {width: 60%; margin: 0 auto; margin-bottom: 20px;}
-.early-bird .steps {width: 70%; margin: 0 auto; text-align: center;}
-.more-info-link a {font-size: 2rem; line-height: 2.7rem;}
-.booking-logo.small img {max-width: 200px;}
-table.table-shell {font-size: 1.6rem; line-height: 2.2rem; border-spacing: 4px; }
-.booking-logo.small {margin-bottom: 20px;}
-.citadel-member-section .member-illustration,
-.early-bird .padel-illustration {width: 80%;}
-.padel-centrum .padel-field-additional .image-shell {height: 300px;}
+	#footer .menu-column {width: 100%; margin-bottom: 40px;}
+	#footer .menu-column:last-child {margin-bottom: 0;}
+	#footer .copyright-line {text-align: center;}
+	#introduction-section .row1 .inner-wrapper .text-shell::before {width: 50px;}
+	#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {margin-bottom: 25px;}
+	#introduction-section .row2 .inner-wrapper .text-shell .one-line-link a::after {left: -130px; top: 25px;}
+	#introduction-section .row2 .inner-wrapper .text-shell .one-line-link a {font-size: 6rem; line-height: 6rem;}
+	.main-heading h2,
+	.main-heading h1 {font-size: 6rem; line-height: 5.7rem;}
+	#introduction-section .row2 .inner-wrapper .text-shell .text-content h2 {padding: 20px;}
+	.padel-centrum .padel-field-additional .text-shell {padding: 30px;}
+	.large-qoute h3 {font-size: 5rem; line-height: 4.75rem;}
+	.large-qoute::before {height: 10px;}
+	.early-bird .padel-illustration {width: 60%; margin: 0 auto; margin-bottom: 20px;}
+	.early-bird .steps {width: 70%; margin: 0 auto; text-align: center;}
+	.more-info-link a {font-size: 2rem; line-height: 2.7rem;}
+	.booking-logo.small img {max-width: 200px;}
+	table.table-shell {font-size: 1.6rem; line-height: 2.2rem; border-spacing: 4px; }
+	.booking-logo.small {margin-bottom: 20px;}
+	.citadel-member-section .member-illustration,
+	.early-bird .padel-illustration {width: 80%;}
+	.padel-centrum .padel-field-additional .image-shell {height: 300px;}
+	.citadel-team .team-shell ul li {width: 80%;}
+	.manuel-geeft .inner-wrapper {flex-flow: row wrap;}
+	.manuel-geeft .inner-wrapper .image-position {width: 70%; margin: -80px auto;}
+	.manuel-geeft .inner-wrapper .manul-quote {width: auto; padding-top: 132px; padding-bottom: 30px;}
+	.manuel-geeft .manuel-illustration {margin-bottom: 120px;}
+
+	.event-description .opening-announcement h4 {padding: 25px;}
 
 
 }
@@ -464,9 +568,11 @@ table.table-shell {font-size: 1.6rem; line-height: 2.2rem; border-spacing: 4px; 
 	.early-bird,
 	.fixed-devider,
 	.about-intro {padding-bottom: 80px;}
+	.manuel-geeft .manuel-illustration {margin-bottom: 80px;}
 	.early-bird .steps {width: 100%;}
 	table.table-shell {display: block; overflow-x: auto; white-space: nowrap;}
 	.citadel-table .table-head.wide {width: 100%;}
+	.event-description h3 {font-size: 3rem; line-height: 3.2rem}
 }
 
 
@@ -480,7 +586,7 @@ table.table-shell {font-size: 1.6rem; line-height: 2.2rem; border-spacing: 4px; 
 	#introduction-section .row1 .inner-wrapper .text-shell h1 {font-size: 4.5rem; line-height: 2.5rem;}
 	#introduction-section .row1 .inner-wrapper .text-shell span.welcome {font-size: 9.25rem; line-height: 9rem;}
 	#introduction-section .row1 .inner-wrapper .text-shell span.opening {font-size: 4.5rem; line-height: 2.5rem;}
-
+	.citadel-team .team-shell ul li {width: 90%;}
 }
 
 @media screen and (max-width: 320px){@viewport{width:320px;}@-o-viewport{width:320px;}@-ms-viewport{width:device-width;}
